@@ -1,3 +1,6 @@
+# Diagramme
+![arbo](https://user-images.githubusercontent.com/40793654/117724629-50baa080-b1e4-11eb-9711-83bad45760dd.jpg)
+
 # PokedexApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
