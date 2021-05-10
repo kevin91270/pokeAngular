@@ -1,0 +1,94 @@
+<div id="detail">
+    <img [src]="PokemonById.sprites.front_default" alt="Pokemon" class="rounded float-start">   
+    <p >Nom : {{PokemonById.name}}</p>
+    <p >Type : {{PokemonById.types[0].type.name}}</p>
+    <p >Description : {{PokemonSpecies.flavor_text_entries[40].flavor_text}}</p>
+
+
+    <br>
+
+    <div *ngIf="Evo3" class="evol">
+        <h4>Evolutions</h4>
+        <table class="table-info"> 
+            <tr class="table-info">    
+            
+                <td><img [src]="FirstEvo.sprites.front_default" alt="Pokemon"  class="rounded float-start"></td>
+                <td><img [src]="SecondEvo.sprites.front_default" alt="Pokemon" ></td>
+                <td><img [src]="ThirdEvo.sprites.front_default" alt="Pokemon" class="rounded float-end"></td>
+            </tr>
+            <tr class="table-info">    
+                <td class="table-info">{{PokemonEvo.chain.species.name}}</td> 
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].species.name}}</td>
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].evolves_to[0].species.name}}</td>
+            </tr>        
+            <tr class="table-info">
+                <td></td>    
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].evolution_details[0].min_level}}</td>
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level}}</td>
+            </tr>
+        </table>             
+    </div>
+
+    <div *ngIf="Evo2" class="evol">
+        <h4>Evolution</h4>
+        <table class="table-info"> 
+            <tr class="table-info">    
+            
+                <td><img [src]="FirstEvo.sprites.front_default" alt="Pokemon"  class="rounded float-start"></td>
+                <td><img [src]="SecondEvo.sprites.front_default" alt="Pokemon" class="rounded float-end"></td>
+            </tr>
+            <tr class="table-info">    
+                <td class="table-info">{{PokemonEvo.chain.species.name}}</td> 
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].species.name}}</td>
+            </tr>        
+            <tr class="table-info">
+                <td></td>    
+                <td class="table-info">{{PokemonEvo.chain.evolves_to[0].evolution_details[0].min_level}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+        <p>STATS : </p>
+        <ul class="list-group stats">
+            <li class="list-group-item list-group-item-success" >
+                <b>PV : </b> {{ PokemonById.stats[0].base_stat }}
+            </li>
+            <li class="list-group-item list-group-item-danger"> 
+                <b>Attaque : </b> {{ PokemonById.stats[1].base_stat }}
+            </li>
+            <li class="list-group-item list-group-item-warning">
+                <b>Defense : </b> {{ PokemonById.stats[2].base_stat }}
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                <b>Attaque spécial : </b> {{ PokemonById.stats[3].base_stat }}
+            </li>
+            <li class="list-group-item list-group-item-info">
+                <b>Défense spécial: </b> {{ PokemonById.stats[4].base_stat }}
+            </li>
+            <li class="list-group-item list-group-item-light">
+                <b>Vitesse : </b> {{ PokemonById.stats[5].base_stat }}
+            </li>
+        </ul>
+
+
+    <br>
+
+    <p>Listes d'attaques : </p>
+    <table class="table atk">
+        <thead class="table-dark">
+            <tr>
+                <th >#</th>
+                <th >Nom des attaques</th>
+                <th class="description">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nbrMove of PokemonById.moves; let i = index">
+                <th>{{i}}</th>
+                <td>{{nbrMove.move.name}}</td>
+                <td>{{PokemonDescription[i]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

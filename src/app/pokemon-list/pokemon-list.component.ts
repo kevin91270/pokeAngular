@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,26 +11,34 @@ export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
   totalPokemons!: number;
   searchText: any;
+  IdPokemon!: number;
+  
+  
   constructor(
-    private dataService: DataService,
-  ) {}
+    private dataService: DataService, private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getPokemons();
 
   }
+  getPokemonId(id: number){
+    this.router.navigateByUrl(`/detail-pokemon/${id}`)
+  }
+
   getPokemons(){
-  this.dataService.getPokemons(20)
+  this.dataService.getPokemons(151)
   .subscribe((response: any)=>{
     this.totalPokemons = response.count;
-    response.results.forEach((result: { url: string; }) => {
-      console.log(result.url) 
-      this.dataService.getDataPokemon(result.url)
+    response.results.forEach((result: {name: string}) => { 
+    
+      this.dataService.getData( result.name)
       .subscribe((Response: any)=>{
-        this.pokemons.push(Response);
+        this.pokemons.push(Response);      
       });
     });
   });
+  
 
   }
 }

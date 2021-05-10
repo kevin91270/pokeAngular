@@ -12,7 +12,22 @@ export class DataService {
   getPokemons(limit: number){
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
   }
-  getDataPokemon(url: string){
-    return this.http.get(`${url}`);
+  getData(name: string){
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
+  getPokemonById(id:number){
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  }
+
+  getAtk(url:string){
+    return this.http.get(url);
+  }
+
+  getPokemonSpecies(id:number){
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+  }
+
+  getPokemonEvolution(url:string){
+    return this.http.get(url);
   }
 }

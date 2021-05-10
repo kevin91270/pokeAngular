@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { OrderModule } from 'ngx-order-pipe';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    DetailPokemonComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { OrderModule } from 'ngx-order-pipe';
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
-    OrderModule
+    OrderModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

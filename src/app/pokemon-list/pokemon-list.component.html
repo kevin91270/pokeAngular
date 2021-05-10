@@ -1,22 +1,22 @@
-<label>Search: </label><input  type="search" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="charizard">
-
-<div class="pokemon-grid ">
+<label>Search: </label><input  [(ngModel)]="searchText" autocomplete="off" placeholder="charizard">
+<div class="pokemon-grid">
     <div 
-    class="box" *ngFor="let pokemon of pokemons | filter:searchText | orderBy: 'id' ">
+    class="box" *ngFor="let pokemon of pokemons | filter:searchText |  orderBy: 'id' ">
         <img [src]="pokemon.sprites.front_default" alt="Pokemon">
         <h3>{{  pokemon.name }}</h3>
-        <h4>{{ pokemon.id }}</h4>
+        <h3>{{  pokemon.id }}</h3>
         <p>
-            <b>Type:</b>{{pokemon.types[0].type.name}}
+            <b>Type:</b> {{pokemon.types[0].type.name}}
         </p>
         <p>
-            <b>Height:</b>{{pokemon.height}}
+            <b>Height:</b> {{pokemon.height}}
         </p>
         <p>
-            <b>Health:</b>{{pokemon.stats[0].base_stat}}
+            <b>Health:</b> {{pokemon.stats[0].base_stat}}
         </p>
         <p>
-            <b>Attack Power:</b>{{pokemon.stats[1].base_stat}}
+            <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
         </p>
+        <button type="button" (click)="getPokemonId(pokemon.id)" class="buttonlist">Detail</button>
     </div>
 </div>
