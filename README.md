@@ -1,3 +1,5 @@
+Projet fait par Mehdi MOAD et Kévin CHAPELLE E4-DAD
+
 # Maquette
 https://marvelapp.com/prototype/64811j4
 
