@@ -6,7 +6,7 @@ https://marvelapp.com/prototype/64811j4
 ![image](https://user-images.githubusercontent.com/40793654/117727638-97aa9500-b1e8-11eb-8519-2fc1d59767a4.png)
 
 # Diagramme
-![arbo](https://user-images.githubusercontent.com/40793654/117724629-50baa080-b1e4-11eb-9711-83bad45760dd.jpg)
+![arbov2](https://user-images.githubusercontent.com/40793654/117730089-194ff200-b1ec-11eb-836e-db5ec3a22fb6.jpg)
 
 # PokedexApp
 
