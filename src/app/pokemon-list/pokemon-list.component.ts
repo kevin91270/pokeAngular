@@ -22,11 +22,11 @@ export class PokemonListComponent implements OnInit {
   this.dataService.getPokemons(20)
   .subscribe((response: any)=>{
     this.totalPokemons = response.count;
-    response.results.forEach((result: { id: number; }) => {
-      this.dataService.getMoreData(result.id)
-      .subscribe((uniqResponse: any)=>{
-        this.pokemons.push(uniqResponse);
-        console.log(result.id) 
+    response.results.forEach((result: { url: string; }) => {
+      console.log(result.url) 
+      this.dataService.getDataPokemon(result.url)
+      .subscribe((Response: any)=>{
+        this.pokemons.push(Response);
       });
     });
   });

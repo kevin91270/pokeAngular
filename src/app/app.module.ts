@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppRoutingModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
